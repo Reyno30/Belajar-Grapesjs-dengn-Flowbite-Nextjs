@@ -1,21 +1,97 @@
+/* src/app/globals.css atau tambahkan di file CSS global */
+@import 'flowbite';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.editor-container {
+  display: flex;
+  height: 100vh; /* Menjaga kontainer menempati seluruh viewport */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.blocks-container {
+  width: 250px; /* Lebar untuk section di sebelah kiri */
+  background-color: #f4f4f4; /* Warna latar belakang untuk section */
+  padding: 10px; /* Jarak dalam untuk block manager */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  overflow-y: auto; /* Scrollable jika konten terlalu panjang */
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.editor-panel {
+  flex-grow: 1; /* Editor akan mengambil sisa ruang */
+  padding: 10px;
+}
+
+/* Gaya Kustom untuk Product Categories */
+.product-card {
+  @apply transition-transform transform hover:scale-105; /* Efek zoom saat hover */
+}
+
+.product-title {
+  @apply font-bold text-lg text-gray-800; /* Gaya untuk judul kategori */
+}
+
+.product-description {
+  @apply text-gray-600; /* Gaya untuk deskripsi kategori */
+}
+
+.product-button {
+  @apply mt-2 inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700 transition-colors; /* Gaya untuk tombol */
+}
+
+/* Gaya Kustom untuk Tabel */
+.table-header {
+  @apply min-w-full bg-white border border-gray-300 shadow-md; /* Gaya untuk tabel */
+}
+
+.table-header th {
+  @apply px-4 py-2 font-medium text-gray-900 border-b; /* Gaya untuk sel header */
+}
+
+.table-row {
+  @apply border-b hover:bg-gray-100 transition-colors; /* Gaya untuk baris tabel */
+}
+
+.table-cell {
+  @apply px-4 py-2 border-b; /* Gaya untuk sel tabel */
+}
+
+/* Gaya Kustom untuk Call to Action */
+.cta-container {
+  @apply bg-blue-600 p-6 rounded-lg text-center text-white shadow-md;
+}
+
+.cta-container h2 {
+  @apply text-2xl font-bold mb-2;
+}
+
+.cta-container p {
+  @apply mb-4;
+}
+
+.cta-button {
+  @apply bg-white text-blue-600 font-bold py-2 px-4 rounded hover:bg-gray-100 transition-colors duration-300;
+}
+
+.hidden {
+  display: none;
+}
+
+.countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Arial', sans-serif;
+}
+
+.countdown-timer {
+  font-size: 3rem;
+  color: #333;
+}
+
+.countdown-label {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: #777;
 }
